@@ -66,13 +66,4 @@ public class CoinsController {
 
         return "listacoins";
     }
-
-
-    @Autowired
-    CoinsDao coinsDao;
-
-    public void listar() {
-        coinsDao.listarCoins();
-        System.out.println(coinsDao.listarCoins());
-    }
 }
