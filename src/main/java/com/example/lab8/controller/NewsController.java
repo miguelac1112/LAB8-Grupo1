@@ -18,6 +18,6 @@ public class NewsController {
     public String listarNoticias(Model model) {
         model.addAttribute("listaNoticios", newsDao.listarNoticias());
 
-        return "product/list";
+        return "listanoticias";
     }
 }
