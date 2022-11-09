@@ -60,11 +60,11 @@ public class CoinsController {
             model.addAttribute("prev",page);
             model.addAttribute("last",totalPage);
 
-            model.addAttribute("ordenarpor","horaCreacion");
+            model.addAttribute("ordenarpor","name");
         }
 
 
-        return "Usuario_ListaIncidencias";
+        return "listacoins";
     }
 
 

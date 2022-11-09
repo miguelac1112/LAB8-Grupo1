@@ -25,7 +25,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr th:each="news, info : ${listaNoticios}">
+                <tr th:each="news, info : ${lista}">
                     <td th:text="${news.title}"></td>
                     <td th:text="${news.description}"></td>
                     <td th:text="${news.link}"></td>
