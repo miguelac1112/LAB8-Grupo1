@@ -1,4 +1,4 @@
-package com.example.lab8.Dao;
+package com.example.lab8.dao;
 
 import com.example.lab8.Dto.CoinTotalDto;
 import org.springframework.http.ResponseEntity;
