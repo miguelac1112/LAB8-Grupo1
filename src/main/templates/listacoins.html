@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>index</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js></script>
+    </head>
+
+    <body>
+
+<div class="container">
+
+        <h2>Lista de Noticias</h2>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Titulo de Noticia</th>
+                    <th>Descripción</th>
+                    <th>Link de más información</th>
+                    <th>Fecha</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="news, info : ${listaNoticios}">
+                    <td th:text="${news.title}"></td>
+                    <td th:text="${news.description}"></td>
+                    <td th:text="${news.link}"></td>
+                    <td th:text="${news.feedDate}"></td>
+                </tr>
+            </tbody>
+        </table>
+        </body>
+</html>
+
