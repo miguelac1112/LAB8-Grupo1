@@ -47,7 +47,7 @@ public class CoinsController {
 
             model.addAttribute("ordenarpor",buscarx);
         }else {
-            Page<Coins> pageIncidencia = service.findProductsWithPaginationAndSorting(page,6,"titulo");
+            Page<Coins> pageIncidencia = service.findProductsWithPaginationAndSorting(page,10,"name");
             int totalPage  = pageIncidencia.getTotalPages();
 
             if (totalPage>0){

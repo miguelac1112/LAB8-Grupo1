@@ -11,7 +11,26 @@
     <body>
 
 <div class="container">
+        <div class="dropdown">
+            <button
+                    type="button"
+                    class="btn btn-primary dropdown-toggle"
+                    data-bs-display="static"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
 
+
+            >
+                Ordenar por
+            </button>
+
+            <ul class="dropdown-menu">
+                <li><a  class="dropdown-item"   th:href="@{'/coins/list'+ '?buscarx=name'}">Titulo</a></li>
+                <li><a  class="dropdown-item"   th:href="@{'/coins/list'+ '?buscarx=symbol' }">Urgencia</a></li>
+
+
+            </ul>
+        </div>
         <h2>Lista de Noticias</h2>
 
         <table class="table">
@@ -32,6 +51,43 @@
                     <td th:text="${news.feedDate}"></td>
                 </tr>
             </tbody>
+            <div class="row" th:if="${ordenarpor eq 'name'}">
+                <div class="col-md-2"></div>
+                <div class="col-md-8" >
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item" th:classappend="${prev==0 ? 'disabled':''}">
+                            <a class="page-link" th:href="@{|/coins/list?page=${prev}&buscarx=name|}" >Anterior</a>
+                        </li>
+                        <li class="page-item" th:each="page:${pages}" th:classappend="${current==page?'active':''}">
+                            <a class="page-link" th:href="@{|/coins/list?page=${page}&buscarx=name|}" th:text="${page}"></a>
+                        </li>
+                        <li class="page-item" th:classappend="${current==last ? 'disabled':''}">
+                            <a class="page-link" th:href="@{|/coins/list?page=${next}&buscarx=name|}" >Siguiente</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-2"></div>
+            </div>
+
+            <div class="row" th:if="${ordenarpor eq 'symbol'}">
+                <div class="col-md-2"></div>
+                <div class="col-md-8" >
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item" th:classappend="${prev==0 ? 'disabled':''}">
+                            <a class="page-link" th:href="@{|/coins/list?page=${prev}&buscarx=symbol|}" >Anterior</a>
+                        </li>
+                        <li class="page-item" th:each="page:${pages}" th:classappend="${current==page?'active':''}">
+                            <a class="page-link" th:href="@{|/coins/list?page=${page}&buscarx=symbol|}" th:text="${page}"></a>
+                        </li>
+                        <li class="page-item" th:classappend="${current==last ? 'disabled':''}">
+                            <a class="page-link" th:href="@{|/coins/list?page=${next}&buscarx=symbol|}" >Siguiente</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-2"></div>
+            </div>
         </table>
         </body>
 </html>
