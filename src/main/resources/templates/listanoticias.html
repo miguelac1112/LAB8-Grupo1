@@ -13,6 +13,26 @@
 <div class="container">
 
         <h2>Lista de Noticias</h2>
+        <div class="dropdown">
+            <button
+                    type="button"
+                    class="btn btn-primary dropdown-toggle"
+                    data-bs-display="static"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+
+
+            >
+                Ordenar por descendente
+            </button>
+
+            <ul class="dropdown-menu">
+                <li><a  class="dropdown-item"   th:href="@{'/news/list'+ '?buscarx=feedDate'}">fecha</a></li>
+
+
+
+            </ul>
+        </div>
 
         <table class="table">
             <thead>
